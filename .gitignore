@@ -1,0 +1,19 @@
+# Object files
+obj/*.o
+
+# Binaries
+bin/client
+bin/client_static
+bin/client_dynamic
+
+# Libraries
+lib/*.a
+lib/*.so
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
