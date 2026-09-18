@@ -1,0 +1,19 @@
+.TH MYGREP 3 "2024-01-01" "libmyutils" "User Commands"
+.SH NAME
+mygrep \- search for a pattern in a file
+.SH SYNOPSIS
+.B int mygrep(FILE* fp, const char* search_str, char*** matches);
+.SH DESCRIPTION
+.B mygrep
+searches for lines containing
+.I search_str
+in the file pointed to by
+.IR fp .
+.PP
+Matching lines are stored in the array pointed to by
+.IR matches .
+The caller is responsible for freeing the allocated memory.
+.PP
+Returns the number of matches found, or -1 on failure.
+.SH AUTHOR
+Abdullah (abdullah2k05@users.noreply.github.com)

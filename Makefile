@@ -58,6 +58,14 @@ $(OBJ_DIR)/%.pic.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 $(BIN_DIR) $(OBJ_DIR) $(LIB_DIR):
 	mkdir -p $@
 
+# Install to system directories
+PREFIX = /usr/local
+install: $(STATIC_TARGET)
+	install -d $(DESTDIR)$(PREFIX)/bin
+	install -d $(DESTDIR)$(PREFIX)/share/man/man3
+	install -m 755 $(STATIC_TARGET) $(DESTDIR)$(PREFIX)/bin/client
+	install -m 644 man/man3/*.3 $(DESTDIR)$(PREFIX)/share/man/man3/
+
 # Clean build artifacts
 clean:
 	rm -f $(OBJ_DIR)/*.o $(STATIC_LIB) $(DYNAMIC_LIB) $(STATIC_TARGET) $(DYNAMIC_TARGET)
@@ -70,4 +78,4 @@ run-static: $(STATIC_TARGET)
 run-dynamic: $(DYNAMIC_TARGET)
 	LD_LIBRARY_PATH=$(LIB_DIR) ./$(DYNAMIC_TARGET)
 
-.PHONY: all clean run-static run-dynamic
+.PHONY: all clean run-static run-dynamic install

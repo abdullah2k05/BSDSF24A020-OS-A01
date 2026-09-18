@@ -1,0 +1,24 @@
+.TH MYSTRNCPY 3 "2024-01-01" "libmyutils" "User Commands"
+.SH NAME
+mystrncpy \- copy a string with length limit
+.SH SYNOPSIS
+.B int mystrncpy(char* dest, const char* src, int n);
+.SH DESCRIPTION
+.B mystrncpy
+copies at most
+.I n
+characters from the string pointed to by
+.I src
+to the buffer pointed to by
+.IR dest .
+If
+.I src
+is shorter than
+.IR n ,
+the remaining bytes in
+.I dest
+are filled with null bytes.
+.PP
+Returns the number of characters copied.
+.SH AUTHOR
+Abdullah (abdullah2k05@users.noreply.github.com)

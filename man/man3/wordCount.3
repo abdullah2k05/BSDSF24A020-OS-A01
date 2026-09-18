@@ -1,0 +1,20 @@
+.TH WORDCOUNT 3 "2024-01-01" "libmyutils" "User Commands"
+.SH NAME
+wordCount \- count lines, words, and characters in a file
+.SH SYNOPSIS
+.B int wordCount(FILE* file, int* lines, int* words, int* chars);
+.SH DESCRIPTION
+.B wordCount
+reads through the file pointed to by
+.I file
+and counts the number of lines, words, and characters.
+.PP
+The results are stored in the integer pointers
+.IR lines ,
+.IR words ,
+and
+.IR chars .
+.PP
+Returns 0 on success and -1 on failure (e.g., if file is NULL).
+.SH AUTHOR
+Abdullah (abdullah2k05@users.noreply.github.com)
